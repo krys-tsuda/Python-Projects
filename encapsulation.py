@@ -27,24 +27,23 @@ class EncapClass:
         self.__private_var = value
     
 
-# creating an object of EncapClass
-def getEncap(obj):
-    # accessing private and protected attributes
-    print('Protected variable: {}'.format(obj.get_protected_var()))# output: Protected variable: 10
-    print('Private variable: {}'.format(obj.get_private_var())) # output: Private variable: 5
 
-def updateEncap(obj):
-    # using set moethod to update private and protected attributes
+def get_attributes(obj):
+    # accessing private and protected attributes
+    print('Protected variable:', obj.get_protected_var())
+    print('Private variable:', obj.get_private_var())
+
+def update_attributes(obj):
+    # using set method to update private and protected attributes
     obj.set_protected_var(35)
-    obj.set_private_var(45)
-        
-    print('Updated protected variable: {}'.format(obj.get_protected_var())) # output: updated protected variable: 35
-    print('Updated private variable: {}'.format(obj.get_private_var())) # output: updated private variable: 45
+    obj.set_private_var(45)  
+    print('Updated protected variable:', obj.get_protected_var())
+    print('Updated private variable:', obj.get_private_var())
 
 
 
 
 if __name__ == "__main__":
     obj = EncapClass() # creates instance of EncapClass
-    getEncap(obj)
-    updateEncap(obj)
+    get_attributes(obj)
+    update_attributes(obj)
