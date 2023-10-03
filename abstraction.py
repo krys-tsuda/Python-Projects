@@ -8,6 +8,7 @@ class Animal(ABC):
         self.name = name
    
     # abstract method
+    @abstractmethod
     def make_sound(self):
         pass
 
