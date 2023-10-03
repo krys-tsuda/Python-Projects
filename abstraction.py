@@ -3,10 +3,10 @@
 from abc import ABC, abstractmethod
 
 # parent class
-class Animal:
+class Animal(ABC):
     def __init__(self, name):
         self.name = name
-
+   
     # abstract method
     def make_sound(self):
         pass
@@ -22,12 +22,6 @@ class Dog(Animal):
         return "Bark!"
 
 
-# creating object of Dog class
-
 dog = Dog("Ruca")
-
-# method from parent class
 dog.display_info()
-
-# method from child class
 print(f"{dog.name} says: {dog.make_sound()}")
