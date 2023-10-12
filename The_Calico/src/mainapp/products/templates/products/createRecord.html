@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Crystal Hotels{% endblock %}
+
+{% block header %}Create A New Product{% endblock %}
+
+{% block content %}
+
+
+    <div class="admin_panel">
+        <form method="POST" action="{% url 'createRecord' %}">
+            <div class="frmObject_container">
+                <!-- Cross Site Request Forgery (csrf_token) protection -->
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div class="frmBtn_Container">
+                <input type="submit" class="btn" value="Submit" name="Save_Item">
+                <div class="frmBtn_container">
+                    <a href="../{{ form.pk }}delete/"><button type="button" class="btn" >DELETE</button></a>
+                    <a href="{% url 'admin_console' %}"><button type="button" class="btn" value="Cancel">CANCEL</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+{% endblock %}
